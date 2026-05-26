@@ -1,0 +1,293 @@
+.leaflet-map {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+
+.map-view-shell {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.map-feature-tooltip {
+  border: 0;
+  border-radius: 10px;
+  padding: 7px 12px;
+  background: #ffffff;
+  color: #1f2937;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0;
+  box-shadow:
+    0 8px 22px rgba(15, 23, 42, 0.16),
+    0 0 0 1px rgba(99, 102, 241, 0.16);
+}
+
+.leaflet-tooltip-top.map-feature-tooltip::before {
+  border-top-color: #ffffff;
+}
+
+.leaflet-tooltip-bottom.map-feature-tooltip::before {
+  border-bottom-color: #ffffff;
+}
+
+.leaflet-tooltip-left.map-feature-tooltip::before {
+  border-left-color: #ffffff;
+}
+
+.leaflet-tooltip-right.map-feature-tooltip::before {
+  border-right-color: #ffffff;
+}
+
+.village-stats-card {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  z-index: 900;
+  width: min(280px, calc(100% - 48px));
+  padding: 18px;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.18);
+  box-sizing: border-box;
+}
+
+.village-stats-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.village-title-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 0;
+}
+
+.village-pin-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background: #5b5cf6;
+  flex: 0 0 auto;
+  font-size: 18px;
+}
+
+.village-title-row h3 {
+  margin: 0;
+  color: #1f2937;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.village-title-row p {
+  margin: 4px 0 0;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.village-card-close {
+  width: 26px;
+  height: 26px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #94a3b8;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  flex: 0 0 auto;
+}
+
+.village-card-close:hover {
+  color: #4338ca;
+  background: #eef2ff;
+}
+
+.village-stats-list {
+  display: grid;
+  gap: 16px;
+}
+
+.village-stat-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.village-stat-row span {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.village-stat-row svg {
+  color: #8b93b4;
+  font-size: 15px;
+}
+
+.village-stat-row strong {
+  color: #111827;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.village-details-button {
+  width: 100%;
+  height: 42px;
+  margin-top: 18px;
+  border: 1px solid #d8dcff;
+  border-radius: 8px;
+  background: #f8f8ff;
+  color: #4f46e5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.village-details-button:hover {
+  border-color: #6366f1;
+  background: #eef2ff;
+}
+
+/* =========================
+   MAP TOPBAR
+========================= */
+
+.map-topbar {
+
+  height: 78px;
+
+  background: #ffffff;
+
+  border-radius: 20px;
+
+  padding: 0 24px;
+
+  margin-bottom: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+
+  border: 1px solid #eef2f7;
+
+  box-shadow:
+    0 2px 10px rgba(15, 23, 42, 0.04);
+}
+
+/* =========================
+   BREADCRUMB
+========================= */
+
+.breadcrumb-section {
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+}
+
+.breadcrumb-home {
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 12px;
+
+  border: 1px solid #e5e7eb;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #64748b;
+
+  background: #ffffff;
+
+  font-size: 18px;
+}
+
+.breadcrumb-item {
+
+  font-size: 15px;
+  font-weight: 500;
+
+  color: #475569;
+}
+
+.active-breadcrumb {
+
+  color: #6366f1;
+  font-weight: 600;
+}
+
+.breadcrumb-arrow {
+
+  color: #94a3b8;
+
+  font-size: 16px;
+}
+
+/* =========================
+   RESET BUTTON
+========================= */
+
+.reset-map-btn {
+
+  height: 46px;
+
+  padding: 0 18px;
+
+  border-radius: 14px;
+
+  border: 1px solid #e5e7eb;
+
+  background: #ffffff;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  cursor: pointer;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  color: #475569;
+
+  transition: all 0.2s ease;
+}
+
+.reset-map-btn:hover {
+
+  border-color: #6366f1;
+
+  color: #6366f1;
+
+  background: #f8faff;
+}

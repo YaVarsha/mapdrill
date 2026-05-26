@@ -1,0 +1,53 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "block": "Ujiarpur", "VILLAGE": "Bahadura" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[85.72, 25.68], [85.78, 25.68], [85.78, 25.74], [85.72, 25.74], [85.72, 25.68]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "block": "Ujiarpur", "VILLAGE": "Raepur" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[85.78, 25.68], [85.84, 25.68], [85.84, 25.74], [85.78, 25.74], [85.78, 25.68]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "block": "Ujiarpur", "VILLAGE": "Muriaro" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[85.72, 25.74], [85.78, 25.74], [85.78, 25.80], [85.72, 25.80], [85.72, 25.74]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "block": "Ujiarpur", "VILLAGE": "Chaita" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[85.78, 25.74], [85.84, 25.74], [85.84, 25.80], [85.78, 25.80], [85.78, 25.74]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "block": "Ujiarpur", "VILLAGE": "Rampur" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[85.84, 25.71], [85.88, 25.71], [85.88, 25.78], [85.84, 25.78], [85.84, 25.71]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "block": "Ujiarpur", "VILLAGE": "Bhagwanpur Kamla" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[85.84, 25.78], [85.88, 25.78], [85.88, 25.82], [85.84, 25.82], [85.84, 25.78]]]
+      }
+    }
+  ]
+}

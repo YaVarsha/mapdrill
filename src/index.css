@@ -1,0 +1,322 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f5f7fb;
+  font-family: Inter, sans-serif;
+  transition: background-color 0.28s ease, color 0.28s ease;
+}
+
+/* APP */
+
+.app-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.28s ease, color 0.28s ease;
+}
+
+.topbar,
+.content-layout,
+.sidebar,
+.sidebar-section,
+.map-section,
+.map-topbar,
+.tree-node,
+.custom-select-trigger,
+.custom-select-menu,
+.search-box,
+.shortcut-key,
+.breadcrumb-home,
+.reset-map-btn,
+.village-stats-card,
+.lang-switch button,
+.icon-btn,
+.menu-btn,
+.logo-icon,
+.avatar,
+.tree-icon,
+.village-details-button,
+.village-card-close,
+.map-feature-tooltip {
+  transition:
+    background-color 0.28s ease,
+    border-color 0.28s ease,
+    color 0.28s ease,
+    box-shadow 0.28s ease;
+}
+
+.logo-text h1,
+.logo-text p,
+.tree-title,
+.tree-subtitle,
+.breadcrumb-item,
+.active-breadcrumb,
+.admin-text,
+.custom-select-trigger,
+.custom-select-option,
+.search-box input,
+.shortcut-key,
+.village-title-row h3,
+.village-title-row p,
+.village-stat-row,
+.village-stat-row strong,
+.dropdown-icon,
+.search-icon {
+  transition: color 0.28s ease;
+}
+
+.leaflet-tile {
+  transition: filter 0.35s ease;
+}
+
+/* NAVBAR */
+
+.topbar {
+  height: 72px;
+  background: white;
+  border-bottom: 1px solid #e9edf5;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 24px;
+}
+
+/* CONTENT */
+
+.content-layout {
+  flex: 1;
+  display: flex;
+  gap: 16px;
+
+  padding: 16px;
+  overflow: hidden;
+}
+
+/* SIDEBAR */
+
+.sidebar-section {
+  width: 300px;
+  min-width: 300px;
+
+  background: white;
+  border-radius: 20px;
+  border: 1px solid #eceff5;
+
+  overflow: hidden;
+}
+
+/* MAP */
+
+.map-section {
+  flex: 1;
+
+  background: white;
+  border-radius: 20px;
+  border: 1px solid #eceff5;
+
+  overflow: hidden;
+  position: relative;
+}
+
+.app-container.dark-theme {
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+.dark-theme .content-layout {
+  background: #0f172a;
+}
+
+.dark-theme .topbar,
+.dark-theme .map-topbar,
+.dark-theme .map-section,
+.dark-theme .sidebar-section,
+.dark-theme .sidebar,
+.dark-theme .tree-node,
+.dark-theme .custom-select-trigger,
+.dark-theme .custom-select-menu,
+.dark-theme .search-box,
+.dark-theme .shortcut-key,
+.dark-theme .breadcrumb-home,
+.dark-theme .reset-map-btn,
+.dark-theme .village-stats-card {
+  background: #111827;
+  border-color: #263244;
+}
+
+.dark-theme .topbar {
+  border-bottom-color: #263244;
+}
+
+.dark-theme .sidebar,
+.dark-theme .sidebar-section {
+  background: #0f172a;
+}
+
+.dark-theme .tree-node,
+.dark-theme .map-topbar,
+.dark-theme .map-section,
+.dark-theme .village-stats-card {
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
+}
+
+.dark-theme .active-node {
+  background: linear-gradient(
+    to right,
+    rgba(99, 102, 241, 0.18),
+    #111827
+  );
+}
+
+.dark-theme .logo-text h1,
+.dark-theme .tree-title,
+.dark-theme .admin-text,
+.dark-theme .custom-select-trigger,
+.dark-theme .search-box input,
+.dark-theme .village-title-row h3,
+.dark-theme .village-stat-row strong {
+  color: #f8fafc;
+}
+
+.dark-theme .logo-text p,
+.dark-theme .tree-subtitle,
+.dark-theme .breadcrumb-item,
+.dark-theme .search-box input::placeholder,
+.dark-theme .shortcut-key,
+.dark-theme .village-title-row p,
+.dark-theme .village-stat-row,
+.dark-theme .dropdown-icon {
+  color: #94a3b8;
+}
+
+.dark-theme .menu-btn,
+.dark-theme .icon-btn,
+.dark-theme .reset-map-btn,
+.dark-theme .search-icon {
+  color: #cbd5e1;
+}
+
+.dark-theme .icon-btn:hover,
+.dark-theme .village-card-close:hover,
+.dark-theme .reset-map-btn:hover {
+  background: #1e293b;
+  color: #a5b4fc;
+}
+
+.dark-theme .lang-switch button {
+  background: #111827;
+  color: #e5e7eb;
+  border-color: #334155;
+}
+
+.dark-theme .lang-switch button.active {
+  background: #6366f1;
+  color: #ffffff;
+  border-color: #6366f1;
+}
+
+.dark-theme .logo-icon,
+.dark-theme .avatar,
+.dark-theme .tree-icon {
+  background: #1e293b;
+}
+
+.dark-theme .custom-select-trigger {
+  background:
+    linear-gradient(180deg, #111827 0%, #0f172a 100%);
+  border-color: #334155;
+}
+
+.dark-theme .custom-select-trigger:hover,
+.dark-theme .custom-select.open .custom-select-trigger {
+  border-color: #6366f1;
+  background: #111827;
+}
+
+.dark-theme .custom-select-arrow {
+  color: #94a3b8;
+}
+
+.dark-theme .custom-select.open .custom-select-arrow {
+  color: #a5b4fc;
+}
+
+.dark-theme .custom-select-placeholder,
+.dark-theme .custom-select.disabled .custom-select-trigger {
+  color: #64748b;
+}
+
+.dark-theme .custom-select.disabled .custom-select-trigger {
+  background: #0f172a;
+  border-color: #263244;
+}
+
+.dark-theme .custom-select.disabled .custom-select-arrow {
+  color: #475569;
+}
+
+.dark-theme .custom-select-menu {
+  background: #111827;
+  border-color: #334155;
+  box-shadow:
+    0 18px 38px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(99, 102, 241, 0.12);
+}
+
+.dark-theme .custom-select-option {
+  color: #cbd5e1;
+}
+
+.dark-theme .custom-select-option:hover {
+  background: #1e293b;
+  color: #c7d2fe;
+}
+
+.dark-theme .custom-select-option.selected {
+  background: #6366f1;
+  color: #ffffff;
+}
+
+.dark-theme .leaflet-map {
+  background: #111827;
+}
+
+.dark-theme .leaflet-tile {
+  filter: brightness(0.72) contrast(1.08) saturate(0.85);
+}
+
+.dark-theme .map-feature-tooltip {
+  background: #f8fafc;
+  color: #111827;
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.32),
+    0 0 0 1px rgba(165, 180, 252, 0.32);
+}
+
+.dark-theme .leaflet-tooltip-top.map-feature-tooltip::before {
+  border-top-color: #f8fafc;
+}
+
+.dark-theme .leaflet-tooltip-bottom.map-feature-tooltip::before {
+  border-bottom-color: #f8fafc;
+}
+
+.dark-theme .leaflet-tooltip-left.map-feature-tooltip::before {
+  border-left-color: #f8fafc;
+}
+
+.dark-theme .leaflet-tooltip-right.map-feature-tooltip::before {
+  border-right-color: #f8fafc;
+}
+
+.dark-theme .village-details-button {
+  background: #1e293b;
+  border-color: #334155;
+  color: #a5b4fc;
+}

@@ -1,0 +1,117 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "district": "Samastipur", "BLOCK": "Ujiarpur" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[85.72, 25.68], [85.88, 25.68], [85.88, 25.82], [85.72, 25.82], [85.72, 25.68]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "district": "Samastipur", "BLOCK": "Pusa" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[85.58, 25.82], [85.73, 25.82], [85.73, 25.96], [85.58, 25.96], [85.58, 25.82]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "district": "Samastipur", "BLOCK": "Dalsinghsarai" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[85.75, 25.78], [85.92, 25.78], [85.92, 25.92], [85.75, 25.92], [85.75, 25.78]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "district": "Samastipur", "BLOCK": "Kalyanpur" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[85.88, 25.70], [86.04, 25.70], [86.04, 25.85], [85.88, 25.85], [85.88, 25.70]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "district": "Samastipur", "BLOCK": "Mohiuddin Nagar" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[85.40, 25.55], [85.58, 25.55], [85.58, 25.70], [85.40, 25.70], [85.40, 25.55]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "district": "Samastipur", "BLOCK": "Rosera" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[86.02, 25.82], [86.20, 25.82], [86.20, 25.98], [86.02, 25.98], [86.02, 25.82]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "district": "Samastipur", "BLOCK": "Singhia" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[86.10, 25.98], [86.28, 25.98], [86.28, 26.14], [86.10, 26.14], [86.10, 25.98]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "district": "Samastipur", "BLOCK": "Shivajinagar" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[85.92, 25.98], [86.10, 25.98], [86.10, 26.14], [85.92, 26.14], [85.92, 25.98]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "district": "Samastipur", "BLOCK": "Vidyapati Nagar" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[85.50, 25.68], [85.68, 25.68], [85.68, 25.82], [85.50, 25.82], [85.50, 25.68]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "district": "Samastipur", "BLOCK": "Warisnagar" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[85.82, 25.90], [85.98, 25.90], [85.98, 26.05], [85.82, 26.05], [85.82, 25.90]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "district": "Samastipur", "BLOCK": "Hasanpur" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[86.18, 25.86], [86.36, 25.86], [86.36, 26.02], [86.18, 26.02], [86.18, 25.86]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "district": "Samastipur", "BLOCK": "Bibhutipur" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[85.72, 25.92], [85.88, 25.92], [85.88, 26.08], [85.72, 26.08], [85.72, 25.92]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "district": "Samastipur", "BLOCK": "Sarairanjan" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[85.62, 25.62], [85.76, 25.62], [85.76, 25.78], [85.62, 25.78], [85.62, 25.62]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "district": "Samastipur", "BLOCK": "Tajpur" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[85.76, 25.56], [85.92, 25.56], [85.92, 25.70], [85.76, 25.70], [85.76, 25.56]]]
+      }
+    }
+  ]
+}
