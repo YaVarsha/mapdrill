@@ -198,6 +198,7 @@
 
   box-shadow:
     0 2px 10px rgba(15, 23, 42, 0.04);
+  gap: 16px;
 }
 
 /* =========================
@@ -210,6 +211,13 @@
   align-items: center;
 
   gap: 14px;
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.breadcrumb-section::-webkit-scrollbar {
+  display: none;
 }
 
 .breadcrumb-home {
@@ -238,12 +246,14 @@
   font-weight: 500;
 
   color: #475569;
+  white-space: nowrap;
 }
 
 .active-breadcrumb {
 
   color: #6366f1;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .breadcrumb-arrow {
@@ -290,4 +300,57 @@
   color: #6366f1;
 
   background: #f8faff;
+}
+
+@media (max-width: 760px) {
+  .map-topbar {
+    min-height: 70px;
+    height: auto;
+    padding: 12px;
+    border-radius: 14px;
+    align-items: stretch;
+  }
+
+  .breadcrumb-section {
+    gap: 10px;
+  }
+
+  .breadcrumb-home {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    flex: 0 0 auto;
+  }
+
+  .breadcrumb-item,
+  .active-breadcrumb {
+    font-size: 13px;
+  }
+
+  .reset-map-btn {
+    height: 38px;
+    padding: 0 12px;
+    border-radius: 10px;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  .village-stats-card {
+    right: 12px;
+    bottom: 12px;
+    width: min(280px, calc(100% - 24px));
+    padding: 14px;
+    border-radius: 14px;
+  }
+}
+
+@media (max-width: 520px) {
+  .map-topbar {
+    flex-direction: column;
+  }
+
+  .reset-map-btn {
+    width: 100%;
+    justify-content: center;
+  }
 }

@@ -1,14 +1,14 @@
 /* Sidebar.css */
 
 .sidebar {
-  width: 360px;
-  min-width: 360px;
+  width: 100%;
+  min-width: 0;
 
   height: 100%;
 
   background: #f8fafc;
 
-  border-right: 1px solid #e5e7eb;
+  border-right: 0;
 
   padding: 22px 18px;
 
@@ -39,7 +39,7 @@
 
   border: 1px solid #e5e7eb;
 
-  border-radius: 22px;
+  border-radius: 16px;
 
   padding: 18px;
 
@@ -308,4 +308,43 @@
     border-bottom: 1px solid #e5e7eb;
   }
 
+}
+
+@media (max-width: 640px) {
+  .sidebar {
+    padding: 14px;
+    gap: 14px;
+  }
+
+  .drill-tree-wrapper {
+    gap: 12px;
+  }
+
+  .tree-node {
+    padding: 14px;
+    border-radius: 14px;
+  }
+
+  .tree-label {
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+
+  .tree-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+  }
+
+  .tree-title {
+    font-size: 14px;
+  }
+
+  .tree-subtitle {
+    font-size: 12px;
+  }
+
+  .custom-select {
+    height: 46px;
+  }
 }

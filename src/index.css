@@ -35,7 +35,21 @@ body {
 .village-stats-card,
 .lang-switch button,
 .icon-btn,
-.menu-btn,
+.theme-switch,
+.theme-switch-icon,
+.profile-section,
+.profile-dropdown,
+.profile-dropdown-item,
+.account-modal,
+.account-modal-close,
+.profile-summary-card,
+.profile-detail-list div,
+.setting-row,
+.setting-actions button,
+.setting-toggle,
+.primary-action,
+.secondary-action,
+.danger-action,
 .logo-icon,
 .avatar,
 .tree-icon,
@@ -56,6 +70,15 @@ body {
 .breadcrumb-item,
 .active-breadcrumb,
 .admin-text,
+.profile-role,
+.theme-switch-title,
+.theme-switch-value,
+.account-modal-kicker,
+.account-modal h2,
+.account-panel h3,
+.account-panel p,
+.profile-detail-list dt,
+.profile-detail-list dd,
 .custom-select-trigger,
 .custom-select-option,
 .search-box input,
@@ -145,8 +168,23 @@ body {
 .dark-theme .shortcut-key,
 .dark-theme .breadcrumb-home,
 .dark-theme .reset-map-btn,
-.dark-theme .village-stats-card {
+.dark-theme .village-stats-card,
+.dark-theme .theme-switch,
+.dark-theme .profile-section,
+.dark-theme .profile-dropdown,
+.dark-theme .account-modal,
+.dark-theme .account-modal-close,
+.dark-theme .setting-actions button,
+.dark-theme .setting-toggle,
+.dark-theme .secondary-action {
   background: #111827;
+  border-color: #263244;
+}
+
+.dark-theme .profile-summary-card,
+.dark-theme .profile-detail-list div,
+.dark-theme .setting-row {
+  background: #0f172a;
   border-color: #263244;
 }
 
@@ -177,6 +215,10 @@ body {
 .dark-theme .logo-text h1,
 .dark-theme .tree-title,
 .dark-theme .admin-text,
+.dark-theme .profile-dropdown-item,
+.dark-theme .account-modal h2,
+.dark-theme .account-panel h3,
+.dark-theme .profile-detail-list dd,
 .dark-theme .custom-select-trigger,
 .dark-theme .search-box input,
 .dark-theme .village-title-row h3,
@@ -191,11 +233,19 @@ body {
 .dark-theme .shortcut-key,
 .dark-theme .village-title-row p,
 .dark-theme .village-stat-row,
-.dark-theme .dropdown-icon {
+.dark-theme .dropdown-icon,
+.dark-theme .profile-role,
+.dark-theme .theme-switch-title,
+.dark-theme .account-modal-kicker,
+.dark-theme .account-panel p,
+.dark-theme .profile-detail-list dt {
   color: #94a3b8;
 }
 
-.dark-theme .menu-btn,
+.dark-theme .theme-switch-value {
+  color: #f8fafc;
+}
+
 .dark-theme .icon-btn,
 .dark-theme .reset-map-btn,
 .dark-theme .search-icon {
@@ -203,10 +253,24 @@ body {
 }
 
 .dark-theme .icon-btn:hover,
+.dark-theme .theme-switch:hover,
+.dark-theme .profile-section:hover,
+.dark-theme .profile-dropdown-item:hover,
+.dark-theme .account-modal-close:hover,
+.dark-theme .secondary-action:hover,
 .dark-theme .village-card-close:hover,
 .dark-theme .reset-map-btn:hover {
   background: #1e293b;
   color: #a5b4fc;
+}
+
+.dark-theme .profile-dropdown-item.danger {
+  color: #f87171;
+}
+
+.dark-theme .profile-dropdown-item.danger:hover {
+  background: rgba(127, 29, 29, 0.32);
+  color: #fecaca;
 }
 
 .dark-theme .lang-switch button {
@@ -223,8 +287,25 @@ body {
 
 .dark-theme .logo-icon,
 .dark-theme .avatar,
-.dark-theme .tree-icon {
+.dark-theme .tree-icon,
+.dark-theme .theme-switch-icon {
   background: #1e293b;
+}
+
+.dark-theme .theme-switch.active .theme-switch-icon {
+  background: #facc15;
+  color: #111827;
+}
+
+@media (max-width: 980px) {
+  .app-container {
+    min-height: 100vh;
+    height: auto;
+  }
+
+  .content-layout {
+    min-height: 0;
+  }
 }
 
 .dark-theme .custom-select-trigger {
