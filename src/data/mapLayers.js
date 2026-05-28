@@ -1,17 +1,9 @@
-// ✅ INDIA MAP
-import indiaStates from "./geojson/india/indiaStates.json";
-
-// ✅ BIHAR DISTRICTS
-import biharDistrictsGeo from "./geojson/bihar/biharDistricts.json";
-
-// ✅ BIHAR BLOCKS
 import samastipurBlocksRaw from
   "./geojson/blocks/samastipurBlocks.geojson?raw";
 
 import patnaBlocks from
   "./bihar/patnaBlocks.js";
 
-// ✅ BIHAR VILLAGES
 import ujiarpurVillagesRaw from
   "./geojson/villages/ujiarpurVillages.geojson?raw";
 
@@ -24,27 +16,45 @@ const samastipurBlocks =
 const ujiarpurVillages =
   JSON.parse(ujiarpurVillagesRaw);
 
-const mapLayers = {
+const fetchGeoJson = async (url) => {
 
-  // ✅ INDIA
-  india: indiaStates,
+  const response =
+    await fetch(url);
 
-  // ✅ STATE → DISTRICTS
-    Bihar: biharDistrictsGeo,
+  if (!response.ok) {
 
-  // ✅ DISTRICT → BLOCKS
-  Samastipur:
-    samastipurBlocks,
+    throw new Error(`Unable to load map layer: ${url}`);
+  }
 
-  Patna:
-    patnaBlocks,
-
-  // ✅ BLOCK → VILLAGES
-  Ujiarpur:
-    ujiarpurVillages,
-
-  Pusa:
-    pusaVillages,
+  return response.json();
 };
 
-export default mapLayers;
+const layerLoaders = {
+  india: () => fetchGeoJson("/data/geojson/india/indiaStates.json"),
+  Bihar: () => fetchGeoJson("/data/geojson/bihar/biharDistricts.json"),
+  Samastipur: () => Promise.resolve(samastipurBlocks),
+  Patna: () => Promise.resolve(patnaBlocks),
+  Ujiarpur: () => Promise.resolve(ujiarpurVillages),
+  Pusa: () => Promise.resolve(pusaVillages),
+};
+
+const layerCache = {};
+
+export const hasMapLayer = (name) =>
+  Boolean(layerLoaders[name]);
+
+export const getMapLayer = async (name) => {
+
+  if (!hasMapLayer(name)) {
+
+    return null;
+  }
+
+  if (!layerCache[name]) {
+
+    layerCache[name] =
+      layerLoaders[name]();
+  }
+
+  return layerCache[name];
+};

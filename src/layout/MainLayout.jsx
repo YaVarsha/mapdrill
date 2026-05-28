@@ -1,8 +1,12 @@
-import { useState } from "react";
+import {
+  lazy,
+  Suspense,
+  useEffect,
+  useState,
+} from "react";
 
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
-import MapView from "../components/MapView";
 import hindiTranslations from "../data/translations";
 import biharDistricts from "../data/bihar/biharDistricts";
 import samastipurBlocks from "../data/bihar/samastipurBlocks";
@@ -11,6 +15,8 @@ import ujiarpurVillages from "../data/bihar/ujiarpurVillages";
 import pusaVillages from "../data/bihar/pusaVillages";
 
 import "./MainLayout.css";
+
+const MapView = lazy(() => import("../components/MapView"));
 
 const toSelectOptions = (items = {}) =>
   Object.keys(items).map((name) => ({
@@ -85,10 +91,41 @@ const [selectedVillage, setSelectedVillage] = useState("");
 
 const [searchQuery, setSearchQuery] = useState("");
 
+const [shouldLoadMap, setShouldLoadMap] = useState(false);
+
  
 
     // ✅ Reset Map
 const [resetMap, setResetMap] = useState(false);
+
+useEffect(() => {
+
+  const loadMap = () => {
+
+    setShouldLoadMap(true);
+  };
+
+  if ("requestIdleCallback" in window) {
+
+    const idleId =
+      window.requestIdleCallback(loadMap, {
+        timeout: 1800,
+      });
+
+    return () => {
+
+      window.cancelIdleCallback(idleId);
+    };
+  }
+
+  const timerId =
+    window.setTimeout(loadMap, 900);
+
+  return () => {
+
+    window.clearTimeout(timerId);
+  };
+}, []);
 
 const districtOptions =
   districtOptionsByState[selectedState] || [];
@@ -278,7 +315,9 @@ setSearchQuery("");
           {/* ✅ Map */}
           <main className="map-section">
 
-            <MapView
+            {shouldLoadMap ? (
+              <Suspense fallback={<div className="map-loading-shell" />}>
+                <MapView
   language={language}
 
   selectedState={selectedState}
@@ -294,6 +333,10 @@ setSearchQuery("");
 
   resetMap={resetMap}
 />
+              </Suspense>
+            ) : (
+              <div className="map-loading-shell" />
+            )}
 
           </main>
 

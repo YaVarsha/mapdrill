@@ -2,6 +2,7 @@
 import {
   useCallback,
   useEffect,
+  useMemo,
   useState,
   useRef,
 } from "react";
@@ -28,7 +29,10 @@ import {
 import markerIcon from "leaflet/dist/images/marker-icon.png";
 import markerShadow from "leaflet/dist/images/marker-shadow.png";
 
-import mapLayers from "../data/mapLayers";
+import {
+  getMapLayer,
+  hasMapLayer,
+} from "../data/mapLayers";
 import hindiTranslations from "../data/translations";
 import villageStats from "../data/villageStats";
 
@@ -134,7 +138,7 @@ const MapView = ({
       if (
         selectedBlock &&
         selectedBlock !== selectedDistrict &&
-        mapLayers[selectedBlock]
+        hasMapLayer(selectedBlock)
       ) {
 
         setMapLevel("villages");
@@ -142,7 +146,7 @@ const MapView = ({
 
       else if (
         selectedDistrict &&
-        mapLayers[selectedDistrict]
+        hasMapLayer(selectedDistrict)
       ) {
 
         setMapLevel("blocks");
@@ -150,7 +154,7 @@ const MapView = ({
 
       else if (
         selectedState &&
-        mapLayers[selectedState]
+        hasMapLayer(selectedState)
       ) {
 
         setMapLevel("districts");
@@ -341,60 +345,90 @@ const MapView = ({
   };
 
   // ✅ CURRENT LAYER
-  let currentLayer = null;
+  const currentLayerKey = useMemo(() => {
 
-  if (mapLevel === "states") {
+    if (mapLevel === "districts") {
 
-    currentLayer =
-      mapLayers.india;
-  }
-
-  else if (
-    mapLevel === "districts"
-  ) {
-
-    currentLayer =
-      mapLayers[selectedState];
-
-    if (!currentLayer) {
-
-      currentLayer =
-        mapLayers.india;
+      return hasMapLayer(selectedState)
+        ? selectedState
+        : "india";
     }
-  }
 
-  else if (
-    mapLevel === "blocks"
-  ) {
+    if (mapLevel === "blocks") {
 
-    currentLayer =
-      mapLayers[selectedDistrict];
-
-    if (!currentLayer) {
-
-      currentLayer =
-        mapLayers[selectedState];
+      return hasMapLayer(selectedDistrict)
+        ? selectedDistrict
+        : selectedState;
     }
-  }
 
-  else if (
-    mapLevel === "villages"
-  ) {
+    if (mapLevel === "villages") {
 
-    currentLayer =
-      selectedBlock !== selectedDistrict
-        ? mapLayers[selectedBlock]
+      if (
+        selectedBlock !== selectedDistrict &&
+        hasMapLayer(selectedBlock)
+      ) {
+
+        return selectedBlock;
+      }
+
+      return hasMapLayer(selectedDistrict)
+        ? selectedDistrict
         : null;
-
-    if (
-      !currentLayer &&
-      !selectedBlock
-    ) {
-
-      currentLayer =
-        mapLayers[selectedDistrict];
     }
-  }
+
+    return "india";
+  }, [
+    mapLevel,
+    selectedState,
+    selectedDistrict,
+    selectedBlock,
+  ]);
+
+  const [currentLayer, setCurrentLayer] =
+    useState(null);
+
+  useEffect(() => {
+
+    let isActive =
+      true;
+
+    if (!currentLayerKey) {
+
+      Promise.resolve().then(() => {
+
+        if (isActive) {
+
+          setCurrentLayer(null);
+        }
+      });
+
+      return () => {
+
+        isActive = false;
+      };
+    }
+
+    getMapLayer(currentLayerKey)
+      .then((layer) => {
+
+        if (isActive) {
+
+          setCurrentLayer(layer);
+        }
+      })
+      .catch(() => {
+
+        if (isActive) {
+
+          setCurrentLayer(null);
+        }
+      });
+
+    return () => {
+
+      isActive = false;
+    };
+  }, [currentLayerKey]);
 
   // ✅ MAP STYLE
   useEffect(() => {
@@ -620,7 +654,7 @@ const MapView = ({
           setTimeout(() => {
 
             if (
-              mapLayers[areaName]
+              hasMapLayer(areaName)
             ) {
 
               setMapLevel(
@@ -646,9 +680,7 @@ const MapView = ({
           setTimeout(() => {
 
             if (
-              mapLayers[
-                areaName
-              ]
+              hasMapLayer(areaName)
             ) {
 
               setMapLevel(
@@ -673,9 +705,7 @@ const MapView = ({
           setTimeout(() => {
 
             if (
-              mapLayers[
-                areaName
-              ]
+              hasMapLayer(areaName)
             ) {
 
               setMapLevel(

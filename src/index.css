@@ -50,6 +50,7 @@ body {
 .primary-action,
 .secondary-action,
 .danger-action,
+.map-loading-shell,
 .logo-icon,
 .avatar,
 .tree-icon,
@@ -176,7 +177,8 @@ body {
 .dark-theme .account-modal-close,
 .dark-theme .setting-actions button,
 .dark-theme .setting-toggle,
-.dark-theme .secondary-action {
+.dark-theme .secondary-action,
+.dark-theme .map-loading-shell {
   background: #111827;
   border-color: #263244;
 }
