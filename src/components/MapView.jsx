@@ -223,6 +223,11 @@ const MapView = ({
             value.trim() &&
             ![
               "country",
+              "engtype_1",
+              "id_0",
+              "id_1",
+              "iso",
+              "name_0",
               "state",
               "state_name",
               "state_code",
@@ -384,8 +389,16 @@ const MapView = ({
     selectedBlock,
   ]);
 
-  const [currentLayer, setCurrentLayer] =
-    useState(null);
+  const [loadedLayer, setLoadedLayer] =
+    useState({
+      key: null,
+      data: null,
+    });
+
+  const currentLayer =
+    loadedLayer.key === currentLayerKey
+      ? loadedLayer.data
+      : null;
 
   useEffect(() => {
 
@@ -398,7 +411,10 @@ const MapView = ({
 
         if (isActive) {
 
-          setCurrentLayer(null);
+          setLoadedLayer({
+            key: null,
+            data: null,
+          });
         }
       });
 
@@ -413,14 +429,20 @@ const MapView = ({
 
         if (isActive) {
 
-          setCurrentLayer(layer);
+          setLoadedLayer({
+            key: currentLayerKey,
+            data: layer,
+          });
         }
       })
       .catch(() => {
 
         if (isActive) {
 
-          setCurrentLayer(null);
+          setLoadedLayer({
+            key: null,
+            data: null,
+          });
         }
       });
 
@@ -792,6 +814,12 @@ const MapView = ({
       />
 
     </MapContainer>
+
+      {!currentLayer && (
+        <div className="map-layer-loading">
+          Loading map layer...
+        </div>
+      )}
 
       {
         selectedVillage && (

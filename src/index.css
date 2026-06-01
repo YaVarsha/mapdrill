@@ -64,6 +64,11 @@ body {
     box-shadow 0.28s ease;
 }
 
+.dark-theme .map-layer-loading {
+  background: rgba(15, 23, 42, 0.74);
+  color: #cbd5e1;
+}
+
 .logo-text h1,
 .logo-text p,
 .tree-title,
